@@ -1,0 +1,43 @@
+<html>
+    <head>
+       
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
+<!-- <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js" charset="utf-8"></script> -->
+
+        <style>
+            #map {
+                width: 100%;
+                height: 100vh;
+                padding: 0%;
+                margin: 0%;
+            }   
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+  
+    </body>
+</html>
+
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+<script>
+    var map = L.map('map').setView([10.29652897921384, 483.90653456770644], 17);
+
+var osm = L.tileLayer('https://api.mapbox.com/styles/v1/rocs13/cle9njs8z000201qvr4x2xvhk/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoicm9jczEzIiwiYSI6ImNsZTQ2cm1zczAwMmkzcW82eW93bDZndXMifQ.gYyoqA7LvqWAdtu6HTxpYw', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+osm.addTo(map);
+
+L.control.locate().addTo(map);
+  
+ map.on('click', function(e){
+
+        console.log(e);
+
+    });
+
+</script>
